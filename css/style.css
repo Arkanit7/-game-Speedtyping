@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
+/* ---------Reset Styles--------- */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  line-height: 1;
+  vertical-align: baseline;
+}
+
+picture,
+img {
+  display: inline-block;
+  vertical-align: top;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button,
+input[type="button"],
+input[type="checkbox"],
+input[type="radio"],
+input[type="submit"] {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul,
+li,
+ol {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+address {
+  font-style: normal;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*----------------End of reset styles--------------------*/
+:root {
+  font-family: "Itim", cursive;
+}
+
+._lock {
+  overflow: hidden;
+}
+
+.container {
+  padding: 0 12px;
+  max-width: 792px;
+  margin: 0 auto;
+}
+
+/**********************
+---------CONTENT
+*********************/
+.typing {
+  background-color: #0a9aff;
+  position: relative;
+}
+
+.typing__timer {
+  position: absolute;
+  top: 1.33333rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 2.5rem;
+  color: white;
+}
+
+@media only all and (min-width: 480px) {
+  .typing__timer {
+    font-size: 5rem;
+  }
+}
+
+.typing__container {
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 4rem 0.5rem;
+  max-width: 768px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media only all and (min-width: 480px) {
+  .typing__container {
+    padding: 4rem 0.75rem;
+  }
+}
+
+.typing__body {
+  padding: 0.75rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.4);
+}
+
+@media only all and (min-width: 576px) {
+  .typing__body {
+    padding: 2rem 2rem;
+  }
+}
+
+.typing__text, .typing__field {
+  font-size: 1.2rem;
+  line-height: 1.25;
+  padding: 0.375rem;
+}
+
+@media only all and (min-width: 480px) {
+  .typing__text, .typing__field {
+    padding: 0.75rem;
+    font-size: 1.5rem;
+  }
+}
+
+.typing__text {
+  margin-bottom: 1rem;
+}
+
+.typing__text span._correct {
+  color: #29d225;
+}
+
+.typing__text span._incorrect {
+  color: #ff5733;
+}
+
+.typing__field {
+  width: 100%;
+  height: 12rem;
+  resize: none;
+  border-radius: 0.5rem;
+  border: 1px solid black;
+}
+
+.typing__field:focus {
+  border-color: #86b7fe;
+  -webkit-box-shadow: 0 0 0 0.25rem rgba(134, 183, 254, 0.25);
+          box-shadow: 0 0 0 0.25rem rgba(134, 183, 254, 0.25);
+}
+
+@media only all and (min-width: 480px) {
+  .typing__field {
+    height: 16rem;
+  }
+}
