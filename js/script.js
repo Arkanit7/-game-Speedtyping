@@ -2,7 +2,9 @@
 const textNode = document.querySelector("#text");
 const fieldNode = document.querySelector("#textfield");
 const timerNode = document.querySelector("#timer");
-let quoteNodeArray, timerInterval;
+let quoteNodeArray,
+  timerInterval,
+  count = 1;
 
 const RANDOM_QUOTE_API_URL = "https://api.quotable.io/random";
 
@@ -41,8 +43,23 @@ function clearTimer() {
 }
 
 function logTime() {
+  let time = timerNode.innerText;
+  let chars = quoteNodeArray.length;
+  let speed = Math.round((chars / time + Number.EPSILON) * 100) / 100;
   console.log(
-    `%c ${timerNode.innerText}s`,
+    `%c #${count++}`,
+    "color:orange; font-size: 24px; background-color: blue; padding: 0 1rem;"
+  );
+  console.log(
+    `%c Total time is ${time}s`,
+    "color:orange; font-size: 24px; background-color: purple; padding: 0 1rem;"
+  );
+  console.log(
+    `%c Characters: ${chars}.`,
+    "color:orange; font-size: 24px; background-color: purple; padding: 0 1rem;"
+  );
+  console.log(
+    `%c Speed: ${speed}char/s.`,
     "color:orange; font-size: 24px; background-color: purple; padding: 0 1rem;"
   );
 }
